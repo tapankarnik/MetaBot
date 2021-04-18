@@ -13,11 +13,11 @@ def regularResponse(currentInput):
     response = openai.Completion.create(
     engine="davinci",
     prompt=prompt,
-    temperature=0.3,
-    max_tokens=60,
+    temperature=0.7,
+    max_tokens=150,
     top_p=1,
     frequency_penalty=0,
-    presence_penalty=0,
+    presence_penalty=0.6,
     stop=["\n"]
     )
     answer = str(response["choices"][0]["text"])
