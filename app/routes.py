@@ -19,6 +19,7 @@ def index():
         f = open('bigprompt.txt', 'r')
         contents = f.read()
         f.close()
+        form.user_input.data = ""
         return render_template('index.html', data=contents, form=form)   
     #prompt = "The following is a bot that is helpful and friendly.\n\n"
     #response = ask_bot(prompt)
