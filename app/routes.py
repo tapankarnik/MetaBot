@@ -1,4 +1,4 @@
-from flask import render_template, redirect
+from flask import render_template, redirect, Response
 from app import app
 from app.forms import SubmitQueryForm
 import master
@@ -6,6 +6,18 @@ import master
 def ask_bot(query):
     response = 'Bot says something back'
     return response
+@app.route("/download")
+def getPrompts():
+    # with open("outputs/Adjacency.csv") as fp:
+    #     csv = fp.read()
+    f = open("bigprompt.txt", 'r')
+    contents = f.read()
+    f.close()
+    return Response(
+        contents,
+        mimetype="text/plain",
+        headers={"Content-disposition":
+                 "attachment; filename=bigprompt.txt"})
 
 @app.route('/', methods=['GET','POST'])
 @app.route('/index', methods=['GET','POST'])
