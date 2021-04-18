@@ -1,6 +1,6 @@
 # MetaBot
 
-An approach towards a new way of training chatbots. Talk to a chatbot that trains other chatbots! We use GPT3 to provide a way for molding your chatbot the way you want.
+This project is an approach towards a new way of training chatbots. The user is given a way to interact with and also give feedback to the chatbot using plain english. Why dive into a codebase when you could just tell it? We use two GPT-3 instances, one for understanding the user's feedback and generating a prompt, and the other as the chatbot. 
 
 
 ## Installation
